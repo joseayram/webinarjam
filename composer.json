@@ -1,0 +1,29 @@
+{
+    "name": "joseayram/webinarjam",
+    "description": "Webinarjam API library",
+    "type": "library",
+    "keywords": [
+        "webinars",
+        "WebinarJam"
+    ],
+    "homepage": "https://github.com/joseayram/webinarjam",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "José Ayram",
+            "email": "ayramj@gmail.com",
+            "homepage": "https://joseayram.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">= 7.2",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "joseayram\\": "src/"
+        }
+    }
+}
