@@ -119,21 +119,10 @@ class WebinarJam
             'schedule' => $schedule
         ];
 
-        if ($last_name != null) {
-            $params['last_name'] = $last_name;
-        }
-
-        if ($ipAddress != null) {
-            $params['ip_address'] = $ipAddress;
-        }
-
-        if ($countryCode != null) {
-            $params['phone_country_code'] = $countryCode;
-        }
-
-        if ($phone != null) {
-            $params['phone'] = $phone;
-        }
+        $params['last_name'] = $last_name ?? null;
+        $params['ip_address'] = $ipAddress ?? null;
+        $params['phone_country_code'] = $countryCode ?? null;
+        $params['phone'] = $phone ?? null;
 
         return $this->authenticatedCall('register', $params);
     }
