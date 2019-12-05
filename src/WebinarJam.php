@@ -99,6 +99,7 @@ class WebinarJam
      * @param string|null $ipAddress   IP Address (optional)
      * @param string|null $countryCode Country Code (optional)
      * @param string|null $phone       Phone (optional)
+     * @return array $webinar Webinar Details
      */
     public function addToWebinar(
         string $webinarId,
