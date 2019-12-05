@@ -21,7 +21,7 @@ Alternatively, you can specify WebinarJam as a dependency in your project's exis
 
     {
          "require": {
-            "joseayram/webinarjam": "~1.0.0"
+            "joseayram/webinarjam": "~1.0.2"
         }
     }
 

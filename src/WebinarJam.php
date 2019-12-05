@@ -46,26 +46,30 @@ class WebinarJam
             throw new \Exception('You must specify a valid WebinarJam API Key');
         }
 
-        $params['api_key'] = $this->apiKey;
-        curl_setopt_array($ch, self::CURL_OPTIONS);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-        $result = curl_exec($ch);
+        if (is_resource($ch)) {
+            $params['api_key'] = $this->apiKey;
+            curl_setopt_array($ch, self::CURL_OPTIONS);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+            $result = curl_exec($ch);
 
-        if ($result === false) {
-            $error = curl_error($ch);
+            if (false === $result) {
+                $error = curl_error($ch);
+                curl_close($ch);
+                throw new \Exception($error);
+            }
+
             curl_close($ch);
-            throw new \Exception($error);
+
+            $jsonResults = is_string($result) ? json_decode($result, true) : null;
+
+            if (!is_array($jsonResults)) {
+                throw new \Exception($result);
+            }
+
+            return $jsonResults;
         }
 
-        curl_close($ch);
-        $isReturnArray = true;
-        $jsonResults = json_decode($result, $isReturnArray);
-
-        if (!is_array($jsonResults)) {
-            throw new \Exception($result);
-        }
-
-        return $jsonResults;
+        return false;
     }
 
     /**
@@ -94,11 +98,11 @@ class WebinarJam
      * @param string      $webinarId   Webinar ID (required)
      * @param string      $first_name  First Name (required)
      * @param string      $email       E-mail (required)
-     * @param int|integer $schedule    Schedule (required)
+     * @param int         $schedule    Schedule (required)
      * @param string|null $last_name   Last Name (optional)
      * @param string|null $ipAddress   IP Address (optional)
-     * @param string|null $countryCode Country Code (optional)
-     * @param string|null $phone       Phone (optional)
+     * @param int|null $countryCode Country Code (optional)
+     * @param int|null $phone       Phone (optional)
      * @return array $webinar Webinar Details
      */
     public function addToWebinar(
@@ -108,8 +112,8 @@ class WebinarJam
         int $schedule = 0,
         string $last_name = null,
         string $ipAddress = null,
-        string $countryCode = null,
-        string $phone = null
+        int $countryCode = null,
+        int $phone = null
     ): array
     {
         $params = [
