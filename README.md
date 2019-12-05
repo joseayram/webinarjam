@@ -1,7 +1,6 @@
-
 [![webinarjam-logo]](https://www.webinarjam.com/)
 
-[![Latest Stable Version](https://poser.pugx.org/joseayram/webinarjam/v/stable.svg)](https://packagist.org/packages/joseayram/webinarjam) [![Total Downloads](https://poser.pugx.org/joseayram/webinarjam/d/total.svg)](https://packagist.org/packages/joseayram/webinarjam) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/joseayram/webinarjam/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/joseayram/webinarjam/?branch=master) [![License](https://poser.pugx.org/joseayram/webinarjam/license.svg)](https://packagist.org/packages/joseayram/webinarjam)
+[![Build Status](https://scrutinizer-ci.com/g/joseayram/webinarjam/badges/build.png?b=master)](https://scrutinizer-ci.com/g/joseayram/webinarjam/build-status/master) [![Total Downloads](https://poser.pugx.org/joseayram/webinarjam/d/total.svg)](https://packagist.org/packages/joseayram/webinarjam) [![Latest Stable Version](https://poser.pugx.org/joseayram/webinarjam/v/stable.svg)](https://packagist.org/packages/joseayram/webinarjam) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/joseayram/webinarjam/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/joseayram/webinarjam/?branch=master) [![License](https://poser.pugx.org/joseayram/webinarjam/license.svg)](https://packagist.org/packages/joseayram/webinarjam)
 
 # WebinarJam API implementation for PHP >= 7.0
 
@@ -34,15 +33,19 @@ After installing, you need to require Composer's autoloader:
  - **Instance**:
 
     `use joseayram\WebinarJam;`
+
     `$webinarJam = new WebinarJam(YOUR_API_KEY);`
 
 - **Retrieve a full list of all webinars published in your account (getWebinars):**
+
     `$webinarJam->getWebinars();`
 
 - **Get details about one particular webinar from your account (getWebinar):**
+
     `$webinarJam->getWebinar(YOUR_WEBICODE);`
 
 - **Register a person to a specific webinar (addToWebinar):**
+
     `$webinarJam->addToWebinar($webinarID, $firs_name, $email);`
 
 Full Parameters list for this method:
