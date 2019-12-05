@@ -33,7 +33,7 @@ class WebinarJam
     }
 
     /**
-     * Get details about one particular webinar from your account
+     * Call to API URL through curl extension
      *
      * @param  string $endpoint WebinarJam API EndPoint
      * @return array $jsonResults
