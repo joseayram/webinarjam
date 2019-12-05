@@ -40,25 +40,25 @@ class WebinarJam
      */
     protected function authenticatedCall(string $endpoint, array $params = []): array
     {
-        $ch = curl_init(self::API_URL . $endpoint);
+        $curl = curl_init(self::API_URL . $endpoint);
 
         if (empty($this->apiKey)) {
             throw new \Exception('You must specify a valid WebinarJam API Key');
         }
 
-        if (is_resource($ch)) {
+        if (is_resource($curl)) {
             $params['api_key'] = $this->apiKey;
-            curl_setopt_array($ch, self::CURL_OPTIONS);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-            $result = curl_exec($ch);
+            curl_setopt_array($curl, self::CURL_OPTIONS);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
+            $result = curl_exec($curl);
 
             if (false === $result) {
-                $error = curl_error($ch);
-                curl_close($ch);
+                $error = curl_error($curl);
+                curl_close($curl);
                 throw new \Exception($error);
             }
 
-            curl_close($ch);
+            curl_close($curl);
 
             $jsonResults = is_string($result) ? json_decode($result, true) : null;
 
