@@ -10,11 +10,11 @@ This is a WebinarJam API implementation for PHP (>= 7.0) as documented in the **
 
 ## Requirements
 
-1. **PHP >= 7.0**
-2. **ext-curl**
-
+1.**PHP >= 7.0**
+2.**ext-curl**
 
 ## Installation
+
 You can add WebinarJam as a dependency using the composer CLI:
 > composer require joseayram/webinarjam
 
@@ -49,18 +49,18 @@ After installing, you need to require Composer's autoloader:
 
     `$webinarJam->addToWebinar($webinarID, $firs_name, $email);`
 
-#### Full Parameters list for this method:
+#### Full Parameters list for this method
 
-|#|Parameter|Type|Required?|Default|
-|--|--|--|--|--|
-|1|Webinar ID|String|Yes|none|
-|2|First Name|String|Yes|none|
-|3|E-mail|String|Yes|none|
-|4|Schedule|Integer|Yes|0|
-|5|Last Name|String|No|null|
-|6|Ip Address|String|No|null|
-|7|Country Code|String|No|null|
-|8|Phone|String|No|null|
+|# |Parameter   |Type   |Required?|Default|
+|--|------------|-------|---------|-------|
+|1 |Webinar ID  |String |Yes      |none   |
+|2 |First Name  |String |Yes      |none   |
+|3 |E-mail      |String |Yes      |none   |
+|4 |Schedule    |Integer|Yes      |0      |
+|5 |Last Name   |String |No       |null   |
+|6 |Ip Address  |String |No       |null   |
+|7 |Country Code|Integer|No       |null   |
+|8 |Phone       |Integer|No       |null   |
 
 ## Credits
 
@@ -73,6 +73,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 WebinarJam API implementation for PHP is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
 ## Copyright
 
 The WebinarJam logo, trademark and product name are property of [Genesis Digital LLC](https://genesisdigital.co).
