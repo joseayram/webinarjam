@@ -69,7 +69,7 @@ class WebinarJam
             return $jsonResults;
         }
 
-        return false;
+        return [];
     }
 
     /**
